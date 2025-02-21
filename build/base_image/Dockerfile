@@ -48,10 +48,12 @@ WORKDIR ${HOME}
 USER $user_name
 
 #Copying RoboGPT dependencies, real sense dependecies and python module dependecies and install
-COPY install_robogpt_dependencies.sh /home/$user_name/setup
-COPY install_librealsense.sh /home/$user_name/setup
-COPY requirements.txt /home/$user_name/setup
-COPY build_robogpt_ros_pkgs.sh /home/$user_name/setup
+RUN mkdir -p /home/${user_name}/setup
+COPY install_robogpt_dependencies.sh /home/${user_name}/setup/
+COPY install_librealsense.sh /home/${user_name}/setup/
+COPY requirements.txt /home/${user_name}/setup/
+COPY build_robogpt_ros_pkgs.sh /home/${user_name}/setup/
+
 
 #Install General RoboGPT dependencies
 RUN sh /home/$user_name/setup/install_robogpt_dependencies.sh

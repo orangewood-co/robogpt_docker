@@ -2,7 +2,7 @@ open3d==0.13.0
 markupsafe==2.0.1
 Werkzeug==2.0.3
 torch
-imutils==0.5.4n
+imutils==0.5.4
 # opencv-contrib-python==4.7.0.72
 opencv_python==4.10.0.84
 requests==2.31.0

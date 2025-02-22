@@ -64,7 +64,4 @@ RUN pip install -r /home/$user_name/setup/requirements.txt
 #Installl Realsense depedencies
 RUN sh /home/$user_name/setup/install_librealsense.sh
 
-COPY robogpt_entrypoint.sh /home/$user_name/setup/robogpt_entrypoint.sh
-
-#RUN chmod +x /home/$user_name/robogpt_entrypoint.sh
-ENTRYPOINT ["/home/$user_name/setup/robogpt_entrypoint.sh"]
+ENTRYPOINT ["bash", "-c", "source /opt/ros/$ROS_DISTRO/setup.bash -- && exec \"$@\"", "--"]

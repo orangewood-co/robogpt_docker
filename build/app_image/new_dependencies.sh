@@ -22,7 +22,6 @@ RUN apt-get update \
     && apt-get clean
 
 
-
 # Add new dependencies here
 # Eg: apt install htop
 
@@ -36,7 +35,6 @@ sudo chown -R _apt:robogpt_user /var/lib/apt/lists
 wget https://github.com/pusher/cli/releases/download/v0.20/pusher_0.20_linux_amd64.deb -P /home/robogpt_user -O pusher.deb
 cd /home/robogpt_user
 sudo apt install -y /home/robogpt_user/pusher.deb
-
 
 pip3 install azure.storage.blob
 pip3 install azure-storage-file-share
